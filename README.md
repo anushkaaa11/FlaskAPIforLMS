@@ -7,8 +7,9 @@ This is a **Flask-based API** for a Library Management System, designed to manag
 ## Table of Contents:
 1. [Project Overview](#project-overview)
 2. [How to Run the Project](#how-to-run-the-project)
-3. [Design Choices](#design-choices)
-4. [Assumptions & Limitations](#assumptions-limitations)
+3. [How to Use Postman](#how-to-use-postman)
+4. [Design Choices](#design-choices)
+5. [Assumptions & Limitations](#assumptions-limitations)
 
 ---
 
@@ -73,6 +74,81 @@ Follow these steps to get the project running on your local machine:
      - `DELETE /books/<id>` - Delete a book by ID.
      - `GET /search` - Search for books by title or author.
    
+---
+
+### How to Use Postman
+
+Follow the steps below to interact with the Flask API using **Postman**:
+
+1. **Open Postman**:
+   - If you don’t have Postman installed, you can download it from [Postman Download](https://www.postman.com/downloads/).
+   - Open Postman after installation.
+
+2. **Testing the GET /books endpoint**:
+   - In Postman, create a new **GET** request.
+   - Enter the following URL in the request bar:
+     ```
+     http://127.0.0.1:5000/books
+     ```
+   - Click **Send**.
+   - You should get a response with a list of all books in JSON format.
+
+3. **Testing the POST /books endpoint** (Adding a new book):
+   - In Postman, create a new **POST** request.
+   - Enter the following URL:
+     ```
+     http://127.0.0.1:5000/books
+     ```
+   - Select **Body** in Postman, and choose **raw** as the type. Set the body to **JSON** format.
+   - Example JSON to add a new book:
+     ```json
+     {
+       "title": "The Great Gatsby",
+       "author": "F. Scott Fitzgerald",
+       "year": 1925,
+       "genre": "Fiction"
+     }
+     ```
+   - Click **Send**.
+   - You should receive a response confirming that the book has been added.
+
+4. **Testing the PUT /books/{id} endpoint** (Updating a book):
+   - In Postman, create a new **PUT** request.
+   - Enter the URL (replace `{id}` with an actual book ID):
+     ```
+     http://127.0.0.1:5000/books/1
+     ```
+   - Select **Body** in Postman, and choose **raw** as the type. Set the body to **JSON** format.
+   - Example JSON to update the book:
+     ```json
+     {
+       "title": "The Great Gatsby (Updated)",
+       "author": "F. Scott Fitzgerald",
+       "year": 1925,
+       "genre": "Classic Fiction"
+     }
+     ```
+   - Click **Send**.
+   - You should receive a response confirming that the book has been updated.
+
+5. **Testing the DELETE /books/{id} endpoint** (Deleting a book):
+   - In Postman, create a new **DELETE** request.
+   - Enter the URL (replace `{id}` with an actual book ID):
+     ```
+     http://127.0.0.1:5000/books/1
+     ```
+   - Click **Send**.
+   - You should receive a response confirming that the book has been deleted.
+
+6. **Testing the GET /search endpoint** (Searching for books by title or author):
+   - In Postman, create a new **GET** request.
+   - Enter the following URL (replace `{search_term}` with a title or author name):
+     ```
+     http://127.0.0.1:5000/search?query={search_term}
+     ```
+   - Click **Send**.
+   - You should get a response with books matching the search query (either title or author).
+
 ---
 
 ### Design Choices
