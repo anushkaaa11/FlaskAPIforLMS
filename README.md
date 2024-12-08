@@ -106,7 +106,7 @@ Follow the steps below to interact with the Flask API using **Postman**:
        "title": "The Great Gatsby",
        "author": "F. Scott Fitzgerald",
        "year": 1925,
-       "genre": "Fiction"
+       "id": 1
      }
      ```
    - Click **Send**.
@@ -125,7 +125,7 @@ Follow the steps below to interact with the Flask API using **Postman**:
        "title": "The Great Gatsby (Updated)",
        "author": "F. Scott Fitzgerald",
        "year": 1925,
-       "genre": "Classic Fiction"
+       "id": 1
      }
      ```
    - Click **Send**.
